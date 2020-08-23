@@ -1,0 +1,17 @@
+C:\Users\Admin\source\repos\StudentD\StudentD\bin\Debug\netcoreapp3.1\StudentD.exe
+C:\Users\Admin\source\repos\StudentD\StudentD\bin\Debug\netcoreapp3.1\StudentD.deps.json
+C:\Users\Admin\source\repos\StudentD\StudentD\bin\Debug\netcoreapp3.1\StudentD.runtimeconfig.json
+C:\Users\Admin\source\repos\StudentD\StudentD\bin\Debug\netcoreapp3.1\StudentD.runtimeconfig.dev.json
+C:\Users\Admin\source\repos\StudentD\StudentD\bin\Debug\netcoreapp3.1\StudentD.dll
+C:\Users\Admin\source\repos\StudentD\StudentD\bin\Debug\netcoreapp3.1\StudentD.pdb
+C:\Users\Admin\source\repos\StudentD\StudentD\obj\Debug\netcoreapp3.1\StudentD.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\StudentD\StudentD\obj\Debug\netcoreapp3.1\StudentD.LecturerForm.resources
+C:\Users\Admin\source\repos\StudentD\StudentD\obj\Debug\netcoreapp3.1\StudentD.Menu.resources
+C:\Users\Admin\source\repos\StudentD\StudentD\obj\Debug\netcoreapp3.1\StudentD.StudentForm.resources
+C:\Users\Admin\source\repos\StudentD\StudentD\obj\Debug\netcoreapp3.1\StudentD.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\StudentD\StudentD\obj\Debug\netcoreapp3.1\StudentD.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\StudentD\StudentD\obj\Debug\netcoreapp3.1\StudentD.AssemblyInfo.cs
+C:\Users\Admin\source\repos\StudentD\StudentD\obj\Debug\netcoreapp3.1\StudentD.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\StudentD\StudentD\obj\Debug\netcoreapp3.1\StudentD.dll
+C:\Users\Admin\source\repos\StudentD\StudentD\obj\Debug\netcoreapp3.1\StudentD.pdb
+C:\Users\Admin\source\repos\StudentD\StudentD\obj\Debug\netcoreapp3.1\StudentD.genruntimeconfig.cache
