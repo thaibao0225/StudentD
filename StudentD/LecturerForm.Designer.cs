@@ -436,30 +436,33 @@
             this.button3.TabIndex = 0;
             this.button3.Text = "Search";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(238, 367);
+            this.button4.Location = new System.Drawing.Point(248, 365);
             this.button4.Margin = new System.Windows.Forms.Padding(6);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(199, 53);
             this.button4.TabIndex = 0;
             this.button4.Text = "Update";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(238, 294);
+            this.button5.Location = new System.Drawing.Point(248, 173);
             this.button5.Margin = new System.Windows.Forms.Padding(6);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(199, 53);
             this.button5.TabIndex = 0;
             this.button5.Text = "Delete";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(238, 162);
+            this.button7.Location = new System.Drawing.Point(248, 293);
             this.button7.Margin = new System.Windows.Forms.Padding(6);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(199, 53);
@@ -475,6 +478,7 @@
             this.txtBatch.Name = "txtBatch";
             this.txtBatch.Size = new System.Drawing.Size(182, 39);
             this.txtBatch.TabIndex = 1;
+            this.txtBatch.Text = "5";
             // 
             // txtAddress
             // 
@@ -483,6 +487,7 @@
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(182, 39);
             this.txtAddress.TabIndex = 1;
+            this.txtAddress.Text = "4";
             // 
             // txtEmail
             // 
@@ -491,6 +496,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(182, 39);
             this.txtEmail.TabIndex = 1;
+            this.txtEmail.Text = "3";
             // 
             // txtDayOfBirth
             // 
@@ -499,6 +505,7 @@
             this.txtDayOfBirth.Name = "txtDayOfBirth";
             this.txtDayOfBirth.Size = new System.Drawing.Size(182, 39);
             this.txtDayOfBirth.TabIndex = 1;
+            this.txtDayOfBirth.Text = "2";
             // 
             // txtName
             // 
@@ -507,6 +514,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(182, 39);
             this.txtName.TabIndex = 1;
+            this.txtName.Text = "1";
             // 
             // txtId
             // 
@@ -515,6 +523,7 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(182, 39);
             this.txtId.TabIndex = 1;
+            this.txtId.Text = "0";
             // 
             // label13
             // 
@@ -585,6 +594,7 @@
             this.listView3.Size = new System.Drawing.Size(1371, 356);
             this.listView3.TabIndex = 2;
             this.listView3.UseCompatibleStateImageBehavior = false;
+            this.listView3.Click += new System.EventHandler(this.listView3_Click);
             // 
             // groupBox1
             // 
@@ -813,6 +823,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LecturerForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LecturerForm_FormClosed);
+            this.Load += new System.EventHandler(this.LecturerForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

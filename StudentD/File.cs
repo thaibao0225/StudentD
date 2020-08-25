@@ -320,7 +320,7 @@ namespace StudentD
 
         //---------------------------------------------Lecturer----------------------------------------------
 
-        public void ReadFileStudent(string file, Student student)
+        public void ReadFileLecturer(string file, Lecturer lecturer)
         {
             try
             {
@@ -328,8 +328,8 @@ namespace StudentD
 
                 string[] datafile = new string[count];
                 string[,] str = new string[count, 7];
-
                 // danh cho datafile
+
                 int counti = 0;
 
                 using (StreamReader sr = new StreamReader(file))
@@ -343,24 +343,282 @@ namespace StudentD
                         //dua tung hang vao bien chuoi tong 
                         datafile[counti] = line;
 
-                        student.StdArrClo = SliptString(datafile, counti);
+                        lecturer.LecArrClo = SliptString(datafile, counti);
 
 
                         for (int j = 0; j < 6; j++)
                         {
-                            str[counti, j] = student.StdArrClo[j];
+                            str[counti, j] = lecturer.LecArrClo[j];
                         }
 
                         counti++;
                     }
                 }
 
-                student.StdArr = str;
+                lecturer.LecArr = str;
             }
             catch (Exception e)
             {
                 //thong bao loi 
                 MessageBox.Show("Can not read datafile!", "Infor", MessageBoxButtons.OK);
+            }
+        }
+
+        public void WriteFileLecturer(string file, Lecturer lecturer)
+        {
+            String filepath = file;// đường dẫn của file muốn tạo
+            FileStream fs = new FileStream(filepath, FileMode.Create);//Tạo file mới tên là test.txt   
+
+
+            string[,] str1 = lecturer.LecArr;
+
+            int countLine = str1.GetLength(0);
+
+
+
+            string[,] str = new string[countLine + 2, 10];
+
+            // chuyen str1 sang str
+            if (countLine != 0)
+            {
+                for (int i = 0; i < countLine; i++)
+                {
+                    for (int j = 0; j < 7; j++)
+                    {
+                        str[i, j] = str1[i, j];
+                    }
+                }
+            }
+
+
+            str[countLine, 0] = lecturer.LecId;
+            str[countLine, 1] = lecturer.LecName;
+            str[countLine, 2] = lecturer.LecDoB;
+            str[countLine, 3] = lecturer.LecEmail;
+            str[countLine, 4] = lecturer.LecAddress;
+            str[countLine, 5] = lecturer.LecBatch;
+
+
+            StreamWriter sWriter = new StreamWriter(fs, Encoding.UTF8);//fs là 1 FileStream 
+                                                                       // y is line , x is obj
+
+
+            if (countLine == -1) countLine = 0;
+
+            for (int i = 0; i < countLine + 1; i++)
+            {
+                for (int j = 0; j < 6; j++)
+                {
+                    sWriter.Write(str[i, j]);
+                    string test = str[i, j];
+                    sWriter.Write("|");
+                }
+                sWriter.WriteLine();
+            }
+
+            lecturer.LecArr = str;
+
+            MessageBox.Show("Successful!!!", "Succes", MessageBoxButtons.OK);
+            // Ghi và đóng file
+            sWriter.Flush();
+            fs.Close();
+        }
+
+        public void DeleteFileLecturer(string file, Lecturer lecturer)
+        {
+            String filepath = file;// đường dẫn của file muốn tạo
+            FileStream fs = new FileStream(filepath, FileMode.Create);//Tạo file mới tên là test.txt   
+
+
+            string[,] str1 = lecturer.LecArr;
+
+            int countLine = str1.GetLength(0);
+
+            string[,] str = new string[countLine + 2, 10];
+
+            string[,] tamArr = new string[countLine + 2, 10];
+
+            // chuyen str1 sang str
+            if (countLine != 0)
+            {
+                for (int i = 0; i < countLine; i++)
+                {
+                    for (int j = 0; j < 7; j++)
+                    {
+                        tamArr[i, j] = str1[i, j];
+                    }
+                }
+            }
+
+            // giai doan xoa
+            int iStr = 0;
+            int iTamArr = 0;
+
+            do
+            {
+
+                if (tamArr[iStr, 0] == lecturer.LecId)
+                {
+                    iTamArr++;
+                }
+                for (int j = 0; j < 7; j++)
+                {
+                    str[iStr, j] = tamArr[iTamArr, j];
+                }
+
+                iStr++;
+                iTamArr++;
+            }
+            while (iStr != countLine - 1);
+
+
+
+            StreamWriter sWriter = new StreamWriter(fs, Encoding.UTF8);//fs là 1 FileStream 
+            // y is line , x is obj
+
+
+
+            for (int i = 0; i < countLine - 1; i++)
+
+            {
+                for (int j = 0; j < 6; j++)
+                {
+                    //sWriter.Write(str[i, j]);
+                    sWriter.Write(str[i, j]);
+                    //string test = str[i, j];
+                    sWriter.Write("|");
+                }
+                sWriter.WriteLine();
+            }
+
+            //student.StdArr = str;
+            lecturer.LecArr = str;
+
+
+
+            MessageBox.Show("Successful!!!", "Succes", MessageBoxButtons.OK);
+
+            // Ghi và đóng file
+            sWriter.Flush();
+            fs.Close();
+        }
+
+        public void UpdateFileLecturer(string file, Lecturer lecturer)
+        {
+            String filepath = file;// đường dẫn của file muốn tạo
+            FileStream fs = new FileStream(filepath, FileMode.Create);//Tạo file mới tên là test.txt   
+
+
+            string[,] str1 = lecturer.LecArr;
+
+            int countLine = str1.GetLength(0);
+
+            string[,] str = new string[countLine + 2, 10];
+
+            string[,] tamArr = new string[countLine + 2, 10];
+
+            // chuyen str1 sang str
+            if (countLine != 0)
+            {
+                for (int i = 0; i < countLine; i++)
+                {
+                    for (int j = 0; j < 7; j++)
+                    {
+                        tamArr[i, j] = str1[i, j];
+                    }
+                }
+            }
+
+            // giai doan xoa
+            int iStr = 0;
+
+            do
+            {
+
+                if (tamArr[iStr, 0] == lecturer.LecId)
+                {
+                    //iTamArr++;
+                    str[iStr, 0] = lecturer.LecId;
+                    str[iStr, 1] = lecturer.LecName;
+                    str[iStr, 2] = lecturer.LecDoB;
+                    str[iStr, 3] = lecturer.LecEmail;
+                    str[iStr, 4] = lecturer.LecAddress;
+                    str[iStr, 5] = lecturer.LecBatch;
+
+                }
+                else
+                {
+                    for (int j = 0; j < 7; j++)
+                    {
+                        str[iStr, j] = tamArr[iStr, j];
+                    }
+                }
+
+                iStr++;
+
+            }
+            while (iStr != countLine);
+
+            StreamWriter sWriter = new StreamWriter(fs, Encoding.UTF8);//fs là 1 FileStream 
+            // y is line , x is obj
+
+            for (int i = 0; i < countLine; i++)
+
+            {
+                for (int j = 0; j < 6; j++)
+                {
+                    sWriter.Write(str[i, j]);
+                    sWriter.Write("|");
+                }
+                sWriter.WriteLine();
+            }
+
+            //student.StdArr = str;
+            lecturer.LecArr = str;
+
+
+
+            MessageBox.Show("Successful!!!", "Succes", MessageBoxButtons.OK);
+
+            // Ghi và đóng file
+            sWriter.Flush();
+            fs.Close();
+        }
+
+        public void SearchFileLecturer(string file, Lecturer lecturer)
+        {
+            String filepath = file;// đường dẫn của file muốn tạo
+            //FileStream fs = new FileStream(filepath, FileMode.Create);//Tạo file mới tên là test.txt   
+
+            string[,] str1 = lecturer.LecArr;
+
+            int countLine = str1.GetLength(0);
+
+            string[,] tamArr = new string[countLine + 2, 10];
+
+            // chuyen str1 sang str
+            if (countLine != 0)
+            {
+                for (int i = 0; i < countLine; i++)
+                {
+                    for (int j = 0; j < 7; j++)
+                    {
+                        tamArr[i, j] = str1[i, j];
+                    }
+                }
+            }
+
+            for (int i = 0; i < countLine; i++)
+            {
+                if (tamArr[i, 1] == lecturer.LecSearch)
+                {
+                    lecturer.LecId = tamArr[i, 0];
+                    lecturer.LecName = tamArr[i, 1];
+                    lecturer.LecDoB = tamArr[i, 2];
+                    lecturer.LecEmail = tamArr[i, 3];
+                    lecturer.LecAddress = tamArr[i, 4];
+                    lecturer.LecBatch = tamArr[i, 5];
+                }
             }
         }
 

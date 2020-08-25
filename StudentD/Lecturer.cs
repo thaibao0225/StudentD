@@ -15,7 +15,7 @@ namespace StudentD
 
         string lecSearch;
 
-        string[] lecArr;
+        string[,] lecArr;
 
         string[] lecArrClo;
 
@@ -26,9 +26,10 @@ namespace StudentD
         public string LecEmail { get => lecEmail; set => lecEmail = value; }
         public string LecBatch { get => lecBatch; set => lecBatch = value; }
         public string LecAddress { get => lecAddress; set => lecAddress = value; }
-        public string[] LecArr { get => lecArr; set => lecArr = value; }
+        
         public string LecSearch { get => lecSearch; set => lecSearch = value; }
         public string[] LecArrClo { get => lecArrClo; set => lecArrClo = value; }
+        public string[,] LecArr { get => lecArr; set => lecArr = value; }
 
         public Lecturer()
         {

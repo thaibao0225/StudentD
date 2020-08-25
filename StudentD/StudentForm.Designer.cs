@@ -115,7 +115,7 @@
             // 
             // btDelete
             // 
-            this.btDelete.Location = new System.Drawing.Point(184, 133);
+            this.btDelete.Location = new System.Drawing.Point(185, 133);
             this.btDelete.Margin = new System.Windows.Forms.Padding(6);
             this.btDelete.Name = "btDelete";
             this.btDelete.Size = new System.Drawing.Size(199, 53);
@@ -126,7 +126,7 @@
             // 
             // btAdd
             // 
-            this.btAdd.Location = new System.Drawing.Point(184, 242);
+            this.btAdd.Location = new System.Drawing.Point(184, 230);
             this.btAdd.Margin = new System.Windows.Forms.Padding(6);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(199, 53);
@@ -287,6 +287,7 @@
             this.listView1.Size = new System.Drawing.Size(1371, 356);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.Click += new System.EventHandler(this.listView1_Click);
             // 
             // fileToolStripMenuItem
             // 

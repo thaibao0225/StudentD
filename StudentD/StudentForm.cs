@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Text;
 using System.Windows.Forms;
 
@@ -44,21 +45,21 @@ namespace StudentD
 
         private void CreateListViewStudent()
         {
-
+            listView1.Clear();
 
             listView1.View = View.Details;
             listView1.GridLines = true;
             listView1.FullRowSelect = true;
-
+            
             //myListView.Columns.Add(text, width, alignment);
             //Add column header
             
-            listView1.Columns.Add("ID", 100);
-            listView1.Columns.Add("Name", 100);
+            listView1.Columns.Add("ID", 150);
+            listView1.Columns.Add("Name", 321);
             listView1.Columns.Add("DoB", 100);
-            listView1.Columns.Add("Email", 100);
-            listView1.Columns.Add("Address", 50);
-            listView1.Columns.Add("Batch", 290);
+            listView1.Columns.Add("Email", 350);
+            listView1.Columns.Add("Address", 300);
+            listView1.Columns.Add("Batch", 150);
             
 
 
@@ -85,18 +86,6 @@ namespace StudentD
                     }
                 }
             }
-
-            //for (int y = 0; y < countline; y++)
-            //{
-            //    for (int x = 0; x < 9; x++)
-            //    {
-            //        arr1[x] = dataprocessFile[y, x];
-            //    }
-            //    itm = new ListViewItem(arr1);
-            //    listView1.Items.Add(itm);
-            //}
-
-           
 
             for (int y = 0; y < countLine; y++)
             {
@@ -143,6 +132,8 @@ namespace StudentD
             studentManage = new StudentManage(Student);
             InputData();
             studentManage.add();
+
+            CreateListViewStudent();
         }
 
         private void btView_Click(object sender, EventArgs e)
@@ -157,6 +148,8 @@ namespace StudentD
             studentManage = new StudentManage(Student);
             InputData();
             studentManage.update();
+
+            CreateListViewStudent();
         }
 
         private void btDelete_Click(object sender, EventArgs e) //delete
@@ -164,6 +157,34 @@ namespace StudentD
             studentManage = new StudentManage(Student);
             InputData();
             studentManage.delete();
+
+            CreateListViewStudent();
+        }
+
+        private void listView1_Click(object sender, EventArgs e)
+        {
+           
+            string id = null;
+            string name = null;
+            string dob = null;
+            string email = null;
+            string address = null;
+            string batch = null;
+
+            id = listView1.SelectedItems[0].SubItems[0].Text;
+            name = listView1.SelectedItems[0].SubItems[1].Text;
+            dob = listView1.SelectedItems[0].SubItems[2].Text;
+            email = listView1.SelectedItems[0].SubItems[3].Text;
+            address = listView1.SelectedItems[0].SubItems[4].Text;
+            batch = listView1.SelectedItems[0].SubItems[5].Text;
+
+
+            txtId.Text = id;
+            txtName.Text = name;
+            txtDayOfBirth.Text = dob;
+            txtEmail.Text = email;
+            txtAddress.Text = address;
+            txtBatch.Text = batch;
         }
     }
 }
