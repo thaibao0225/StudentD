@@ -6,14 +6,17 @@ namespace StudentD
 {
     class LecturerManage : Person
     {
-        public LecturerManage()
-        {
+        Lecturer lecturer;
 
+        public LecturerManage(Lecturer lecturer)
+        {
+            this.lecturer = lecturer;
         }
 
         public override void add()
         {
             // add Lecturer
+
         }
 
         public override void view()

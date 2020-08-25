@@ -19,6 +19,8 @@ namespace StudentD
             Application.SetCompatibleTextRenderingDefault(false);
 
             Application.Run(new Menu());
+
+            
         }
     }
 }

@@ -15,16 +15,19 @@ namespace StudentD
             InitializeComponent();
         }
 
+        Lecturer lecturer = new Lecturer();
+        LecturerManage lecturerMganage;
+
+
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            // can sua lai
-            formStatic.FileForMenu();
+            
+            formStatic.CloseLecturerForm();
+            formStatic.OpenMenuForm();
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void InputData()
         {
-            Lecturer lecturer = new Lecturer();
-
             lecturer.LecId = txtId.Text;
             lecturer.LecName = txtName.Text;
             lecturer.LecDoB = txtDayOfBirth.Text;
@@ -32,7 +35,28 @@ namespace StudentD
             lecturer.LecBatch = txtBatch.Text;
             lecturer.LecAddress = txtAddress.Text;
 
+            lecturer.LecSearch = txtSearch.Text;
+        }
 
+        private void Output()
+        {
+            txtId.Text = lecturer.LecId;
+            txtName.Text = lecturer.LecName;
+            txtDayOfBirth.Text = lecturer.LecDoB;
+            txtEmail.Text = lecturer.LecEmail;
+            txtBatch.Text = txtBatch.Text;
+            txtAddress.Text = txtAddress.Text;
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void LecturerForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -34,9 +34,10 @@
             // 
             // btStudent
             // 
-            this.btStudent.Location = new System.Drawing.Point(74, 61);
+            this.btStudent.Location = new System.Drawing.Point(137, 130);
+            this.btStudent.Margin = new System.Windows.Forms.Padding(6);
             this.btStudent.Name = "btStudent";
-            this.btStudent.Size = new System.Drawing.Size(75, 37);
+            this.btStudent.Size = new System.Drawing.Size(139, 79);
             this.btStudent.TabIndex = 0;
             this.btStudent.Text = "Student";
             this.btStudent.UseVisualStyleBackColor = true;
@@ -44,9 +45,10 @@
             // 
             // btLecturer
             // 
-            this.btLecturer.Location = new System.Drawing.Point(195, 61);
+            this.btLecturer.Location = new System.Drawing.Point(362, 130);
+            this.btLecturer.Margin = new System.Windows.Forms.Padding(6);
             this.btLecturer.Name = "btLecturer";
-            this.btLecturer.Size = new System.Drawing.Size(75, 37);
+            this.btLecturer.Size = new System.Drawing.Size(139, 79);
             this.btLecturer.TabIndex = 0;
             this.btLecturer.Text = "Lecturer";
             this.btLecturer.UseVisualStyleBackColor = true;
@@ -54,13 +56,16 @@
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(353, 158);
+            this.ClientSize = new System.Drawing.Size(656, 337);
             this.Controls.Add(this.btLecturer);
             this.Controls.Add(this.btStudent);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Menu_FormClosed);
             this.Load += new System.EventHandler(this.Menu_Load);
             this.ResumeLayout(false);
 

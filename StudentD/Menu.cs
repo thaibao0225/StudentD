@@ -31,7 +31,13 @@ namespace StudentD
 
         private void btLecturer_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            formStatic.OpenLecturerForm();
+        }
 
+        private void Menu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
